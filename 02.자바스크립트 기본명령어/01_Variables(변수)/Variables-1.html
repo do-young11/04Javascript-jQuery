@@ -12,6 +12,25 @@
 
     <script>
         // Create the variable here
+        var carName = 'volvo';
+
+        //새로운 속성값 지정
+        document.getElementById('demo').innerHTML= carName;
+
+        /* 
+        속성으로 할 수 있는 것
+
+        1) 속성값 반환
+        2) 속성값 설정
+        */
+
+        //innerHTML에 변경된 속성값 반환
+        var result = document.getElementById('demo').innerHTML;
+        console.log(result);
+
+        console.log(document.getElementById('demo').innerHTML);
+        document.write(document.getElementById('demo').innerHTML);
+        //console에 기록
     </script>
 </body>
 

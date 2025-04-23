@@ -5,22 +5,33 @@
     <meta charset="utf-8">
     <title>Variables-5</title>
     <script>
-   
+
     </script>
 </head>
 
 <body>
     <h3>각각의 변수를 한줄로 나열하여 출력하세요.
         firstName="John", lastName="Doe", age=35</h3>
-        
+
     <p id="demo">Display the result here.</p>
 
     <script>
         // Create the variables here
         // result : John Doe 35
 
+        var firstName = 'John ';
+        var lastName = 'Doe ';
+        var age = 35;
 
+        //document.getElementById('demo').innerHTML = firstName + lastName + age;
 
+        //document.getElementById('demo') -> 처럼 자주쓰게 되는 것을 변수로 등록하여 여러 곳에 간단하게 쓰기
+        var target = document.getElementById('demo'); 
+
+        target.innerHTML = firstName + lastName + age; 
+
+        //공백 문자로 띄어쓰기 하기
+        document.write(firstName + '' + lastName + '' + age);
 
     </script>
 </body>
