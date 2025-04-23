@@ -53,6 +53,41 @@
         - 따옴표 안에 숫자가 작성될 경우, 숫자로 표기되는 문자형 데이터
         - 숫자형 데이터는 산술연산 가능
         */
+        var string = 'javascript';
+        var num = 2025;
+        var tag = '<h1>태그 안에 입력!!</h1>';
+
+        document.write(string + num);
+        document.write(tag);
+
+        //숫자형 데이터
+        var num1 = 50;
+        var num2 = 33;
+        var num3 = '33';
+
+        document.write(num2, '<br>');
+        document.write(num3, '<br>');
+
+        var sum = num1 + num2; //83
+        document.write(sum, '<br>');
+        document.write(sum + num3, '<br><br>'); // 83 + '33' = 116 or 8333
+
+
+        /*
+        3. 논리형 데이터
+        - 논리형 데이터는 true(참) 또는 false(거짓)
+        - Boolean() 메서드는 데이터에 대한 true 또는 false 값을 반환해 주는 메서드
+        */
+
+        var t = 10 > 5;
+        document.write(t, '<br>'); //true
+
+        var hi = Boolean('hello');
+        document.write(hi, '<br>'); //true
+
+        var zero = 0;
+        var result = Boolean(zero);
+        document.write(result); //false
 
 
         /* 
