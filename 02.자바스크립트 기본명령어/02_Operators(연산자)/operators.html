@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>operators</title>
+
+    <style>
+        body {
+            margin-bottom: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,7 +39,7 @@
         result = num1 % num2;
         // % 는 나머지를 구하는 것
         // num1을 num2로 나눈 나머지 구하기
-        document.write(result, '<br>');
+        document.write(result, '<br><br><br>');
 
         // 2. 문자결합 연산자 (+)
         /* 
@@ -47,7 +53,7 @@
         var text = '100';
         var num = 200;
 
-        document.write(text + num, '<br><br>');
+        document.write(text + num, '<br><br><br>');
 
         // 3. (복합)대입 연산자 (=)
         /* 
@@ -56,11 +62,11 @@
         종류            풀이
         A=B             A=B
 
-        A+=B            A=A+B
-        A-=B            A=A-B
-        A*=B            A=A*B
-        A/=B            A=A/B
-        A%=B            A=A%B
+        A +=B            A=A+B
+        A -=B            A=A-B
+        A *=B            A=A*B
+        A /=B            A=A/B
+        A %=B            A=A%B
         */
 
         var num3 = 10,
@@ -79,7 +85,7 @@
         document.write(num3, '<br>'); //10
 
         num3 %= num4; //num3 = num3(10)%num4(3)
-        document.write(num3, '<br><br>'); //1
+        document.write(num3, '<br><br><br>'); //1
 
         // 문자형데이터에 적용할 수 있는 복합대입 연산자 : +=
         // 기존 값에 새로운 값을 더하는 것 -> 값의 누적
@@ -92,9 +98,9 @@
         list += '<li>겨울</li>'; //list = list + '<li>겨울</li>';
         list += '</ul>'; //list = list + '</ul>';
 
-        document.write(list);
+        document.write(list, '<br><br>');
 
-        // 4. 증감연산자
+        // 4. 증감연산자 (=단항연산자)
         /* 
         숫자형 데이터를 1씩 증가(++), 1씩 감소(--)
 
@@ -125,8 +131,153 @@
 
         result = num6++;
         document.write(result, '<br>'); //21
-        document.write(num6, '<br>'); //22
+        document.write(num6, '<br><br><br>'); //22
 
+        // 5. 비교연산자
+
+        /* 
+        - 두 개 이상의 데이터는 '크다, 작다, 같다'와 같이 비교할 때 사용
+        - 연산된 결과값을 논리형 데이터로 반환 (true(참) 또는 false(거짓))
+
+        종류        설명
+        A > B       A는 B보다 크다
+        A < B       A는 B보다 작다
+        A >= B      A는 B보다 크거나 같다
+        A <= B      A는 B보다 작가나 같다
+
+        A == B      A와 B가 같다 (데이터 형태와 관계없이 표기된 값만 일치하면 true 반환)   
+        A != B      A와 B가 같지 않다 (숫자를 비교할 경우, 자료형(type)은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 다르면 true 반환)
+
+                    ex) '10' == 10 -> true
+                        '10' != 10 -> false, 표기된 문자 10과 숫자 10을 비교 (데이터 형태와 상관없이 숫자만 봄)
+
+        A === B     A와 B가 같다 (데이터 형태까지 일치했을 때 true 반환)
+        A !==B      A와 B가 같지 않다 (숫자를 비교할 경우 반드시 표기된 숫자 또는 자료형이 일치하지 않을 때 true 반환)
+
+                    ex) '10' !== 10 -> true, 문자 10과 숫자 10의 표기된 내용은 동일 하나 데이터 형태가 다르므로 true 반환
+        */
+
+        var no = 100;
+        var txt = '100';
+
+        result = (no == 100); // 100==100, true
+        document.write(result, '<br>');
+
+        result = (txt == 100); // '100'==100, true
+        document.write(result, '<br>');
+
+        result = (no === 100); //100===100, true
+        document.write(result, '<br>');
+
+        result = (txt === 100); //'100'===100, flase
+        document.write(result, '<br><br>');
+
+        document.write(no != 100, '<br>'); // 100!=100, false
+        document.write(txt != 100, '<br>'); //'100'!=100, false
+        document.write(no !== 100, '<br>'); //100!==100, false
+        document.write(txt !== 100, '<br><br><br>'); //'100'!==100, true
+
+        // 6. 논리연산자
+        /* 
+        - 컴퓨터는 논리연산이라는 과정을 통해 상황을 판단 (true | false)
+        - 이러한 논리연산에 사용되는 것이 논리 연산자
+        
+        1) AND (논리곱), &&
+            >> 피연산자 중 값이 하나라도 false 가 존재하면 false로 결과값 반환
+            (모든 값이 true가 되어야  true를 반환한다)
+        
+        2) OR (논리합), ||
+            >> 피연산자 중 값이 하나라도 true가 존재하면 true로 결과값 반환
+        
+        3) NOT (논리부정), !
+            >> 결과값을 부정 
+            >> 피연산자의 값이 true면 반대로 false로 결과값 반환
+        */
+
+        var t = true;
+        var f = false;
+
+        result = t && t && t; //true && true && true -> true
+        document.write(result, '<br>');
+
+        result = t && t && f; // true && true && false -> false
+        document.write(result, '<br>');
+
+        result = t || t || t; //true || true || true -> true
+        document.write(result, '<br>');
+
+        result = t || t || f; //ture || true || false -> true
+        document.write(result, '<br>');
+
+        result = !(t); //!(true) -> false
+        document.write(result, '<br>');
+
+        document.write(!(5 > 3), '<br>'); // !(true) -> false
+        document.write(!(3 === '3'), '<br><br><br>'); // !(false) -> true
+
+        /* 
+        연산자 우선순위
+
+        1. ()
+        2. 증감연산자 (++, --)
+        3. 산술연산자 (+, -, *, /, %)
+        4. 비교연산자 (>, <, >=, <=, ==, ===, !=, !==)
+        5. 논리연산자 (&&, ||, !)
+        6. (복합)대입연산자 (=, +=, -=, *=, /=, %=)
+        */
+
+
+        // 7.조건연산자 (삼항 연산자)
+        /* 
+        - 조건식의 결과에 따라 실행문을 다르게 실행
+        - 간당한 조건식을 평가하고 결과에 따라 다른 값을 반환
+        - 조건이 복잡하거나 여러 경우의 수를 처리해야 할 때는 조건문이 더 적합
+
+        ** 기본형: 조건식 ? 실행문1 : 실행문2; **
+         >> 조건식을 만족하면(true) 실행문1 실행
+         >> 조건식을 만족하지 않으면(false) 실행문2 실행
+        */
+
+        //숫자의 비교 결과
+        var bigNum = 10 < 20; // true
+        console.log(bigNum);
+
+        //bigNum ? alert('정답입니다.') : alert('땡');
+
+        result = bigNum ? '정답입니다.' : '땡땡';
+        document.write(result, '<br>');
+
+        //prompt() 메서드 : 사용자에게 입력값을 받아 가져오는 질문창 메서드
+        //기본형 : prompt('질문', '기본응답')
+
+        //테스트 (prompt 객체는 window로 정해져 있어 객체 생략 가능)
+        /*  var name = prompt('이름이 뭐예요?', '그린이');
+         document.write(name + '님 반갑습니다.<br>'); */
+
+        // 예제1. 입력받은 점수로 합격여부 메세지 출력하기
+        //var cutScore = 60; 
+        /* const cutScore = 60; //기준값 기준값은 변하지 않는 값이므로 상수로 선언 (const - 상수 선언)
+        var score = prompt('점수를 입력해 주세요');
+
+        score >= cutScore ? alert('합격') : alert('불합격');
+        document.write(score); */
+
+        // 예제2. 입력받은 숫자를 홀수, 짝수 구분하기
+        // 홀수, 짝수를 구분하기 위한 방법
+        // 2로 나눈 나머지가 0과 같으면 짝수 그게 아니면 홀수
+
+        /* var favoriteNum = prompt('좋아하는 숫자를 입력해주세요.');       
+        favoriteNum % 2 == 0 ? document.write('짝수를 좋아하시는군요') : document.write('홀수를 좋아하시는군요'); */
+
+
+        // Number(0 : 숫자형 데이터로 변환해주는 메서드)
+        var inputNum2 = Number(prompt('숫자를 입력하세요.')); // -> prompt에 입력받은 값(문자)을 숫자로 바꾸어 인식
+        console.log(inputNum2 + 10); // Number(prompt('40')) + 10-> 50
+
+        var inputNum = prompt('숫자를 입력하세요.2'); // 입력받은 값이 문자로 인식
+        console.log(inputNum + 10); // prompt('40') + 10 -> 4010
+        
+        
     </script>
 
 </body>
