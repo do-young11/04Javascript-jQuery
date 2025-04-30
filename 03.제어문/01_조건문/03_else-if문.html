@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>else-if</title>
+
+    <script>
+        /* 
+        3) else-if문 : 두가지 이상의 조건식에서 정해 놓은 조건을 만족했을 때 실행되는 조건문
+
+        //////기본형//////////////////////////////////
+
+        if (조건식1){
+            실행코드1;
+        } else if (조건식2){
+            실행코드2; 
+        } else if (조건식3){
+            실행코드3; 
+        } else if (조건식4){
+            실행코드n; 
+        } else {
+            실행코드; 
+        }
+        ////////////////////////////////////////
+
+        -> 주어진 조건식을 '차례로' 검사, 만족하는 조건식이 나오면 그에 해당하는 코드를 실행하고 조건문 종료
+        -> 조건식 중 만족하는 값이 하나도 없으면 else문 코드 실행
+        */
+
+        //예제1. 만족도에 따른 메세지 출력
+        /* 
+        만족도 5점 만점
+
+        5 : 매우 만족
+        4 : 만족
+        3 : 보통
+        2 : 불만족
+        1 : 매우 불만
+        */
+
+        /* var score = Number(prompt('서비스에 대한 만족도를 평가해 주세요(1~5점 사이 숫자만 입력)'));
+
+        if (score === 5){
+            alert('매우만족');
+        } else if (score === 4){
+            alert('만족');
+        } else if (score===3){
+            alert('보통');
+        } else if (score===2){
+            alert('불만족');
+        } else if (score===1){
+            alert('매우불만')
+        } else {
+            alert('점수를 바르게 입력하세요');
+        } */
+
+        //예제2. 입력되는 월에 따라 계절을 화면에 출력하기
+        //3~5월 봄, 6~8월 여름, 9~11월 가을, 12~2월 겨울
+        /* 
+        봄 (3~5) month = 3,4,5
+        여름 (6~8) month = 6,7,8
+        가을 (9~11) month = 9,10,11
+        겨울 (12~2) month = 12,1,2
+        계절별 구간 설정
+        봄 
+        -> 3 <= month <=5
+        -> 3 <= month && month <=5
+        여름
+        -> 6 <= month <=8
+        -> 6 <= month && month <=8
+        가을
+        -> 9 <= month <=11
+        -> 9 <= month && month <=11
+        겨울
+        -> 2 >= month && month=12
+        */
+
+        var month = Number(prompt('원하는 월을 입력해주세요'));
+        
+        /* if (month===3&&4&&5){
+            document.write('봄입니다.');
+        } else if (month===6&&7&&8){
+            document.write('여름입니다.');
+        } else if (month===9&&10&&11){
+            document.write('가을입니다.');
+        } else if (month===12&&1&&2){
+            document.write('겨울입니다.');
+        }  */
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

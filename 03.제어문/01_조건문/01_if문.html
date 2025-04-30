@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>if문</title>
@@ -40,19 +41,19 @@
         //if문 기본예제
         var num = 10;
 
-        if(num<500){ //10<500 -> true, 실행
+        if (num < 500) { //10<500 -> true, 실행
             document.write('딩동댕', '<br>');
         }
 
-        if(num>500){ //10>500 -> false
+        if (num > 500) { //10>500 -> false
             document.wrtie('실행될까?');
         }
 
-        if('green'){
-            document.write('그린이입니다','<br>');
+        if ('green') {
+            document.write('그린이입니다', '<br>');
         }
 
-        if(0){
+        if (0) {
             document.write('앗 이런');
         }
 
@@ -61,9 +62,25 @@
 
         console.log(Boolean(''));
 
+        //if문 예제1
+        /* var walkAmount = Number(prompt('하루 걷는 양은 몇 보인가요?','0'));
+    
+            if (walkAmount>=8000){
+                document.write('매우 좋은 습관을 지니고 있군요<br>');
+            } */
+
+        //if문 예제2
+        var userName = prompt('방문자의 이름을 입력해 주세요.');
+
+        if(userName){
+            document.write(userName+'님 반갑습니다.');
+        }
+        
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
