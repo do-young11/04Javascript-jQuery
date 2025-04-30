@@ -10,9 +10,18 @@
 
     <script>
         var cars = ["Audi", "Volvo", "BMW"];
+
+        //배열값 재할당
+        /* cars[0] = 'Benz';
+        document.write(cars,'<br>'); */
         
-        cars.shift();
+        //배열객체 메서드 - shift(), unshift()
+        /* cars.shift();
         cars.unshift('Benz');
+        document.write(cars); */
+
+        //배열객체 메서드 - splice()
+        cars.splice(0,1,'Benz');
         document.write(cars);
         
         

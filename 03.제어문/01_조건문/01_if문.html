@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>if문</title>
+
+    <script>
+        /* 
+        제어문이란
+        : 프로그램의 흐름을 조건에 따라 조절할 수 있는 프로그래밍 구문
+
+        제어문 종류
+        1) 조건문 (if문/ else문/ else if문)
+        - 조건에 따라 특정코드 실행
+        - 코드를 실행하기 위한 조건식
+
+        2) 선택문 (swich문)
+        - 일치하는 '경우의 값'이 있을 경우에 특정코드 실행
+
+        3) 반복문(while문/ do while문/ for문)
+        - 코드를 지정한 횟수 만큼 반복해서 실행
+        - 반복을 위한 '조건식' 설정
+        */
+
+        /* 
+        1. 조건문
+        - 조건식의 값이 참(true)인지 거짓(falae)인지에 따라 코드 실행
+
+        (1) if문 : 조건식을 만족(true)할 경우에만 코드 실행
+
+        //기본형/////
+
+            if(조건식){
+                실행코드;
+            }
+
+        /////////////////
+        */
+
+        //if문 기본예제
+        var num = 10;
+
+        if(num<500){ //10<500 -> true, 실행
+            document.write('딩동댕', '<br>');
+        }
+
+        if(num>500){ //10>500 -> false
+            document.wrtie('실행될까?');
+        }
+
+        if('green'){
+            document.write('그린이입니다','<br>');
+        }
+
+        if(0){
+            document.write('앗 이런');
+        }
+
+        var result = Boolean('green');
+        console.log(result);
+
+        console.log(Boolean(''));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
