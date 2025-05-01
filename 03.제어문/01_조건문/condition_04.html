@@ -9,11 +9,23 @@
 
 <script>
 
-	var age = Number(prompt(''));
+	/* var age = Number(prompt('나이를 입력해주세요.'));
 
 	if (age>25){
 		document.write('슬기로운 사회생활 화이팅!');
 	} else {
+		document.write('재미있는 학교생활 화이팅!');
+	} */
+
+	//////기준 나이가 변경 될 때를 위해 변수값 생성//////////////////////////////////
+	var age = Number(prompt('나이를 입력해주세요.'));
+	var avg = 25;
+
+	if (age>avg){
+		//true 입력받은 나이가 기준 나이를 초과
+		document.write('슬기로운 사회생활 화이팅!');
+	} else {
+		//false 입력받은 나이가 기준 나이보다 작다
 		document.write('재미있는 학교생활 화이팅!');
 	}
 

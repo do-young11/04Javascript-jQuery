@@ -16,11 +16,36 @@
 	var == kitty -> false -> 숫자 or 빈문자 or 값 없음
 	*/
 	var result = ('');
-	if (result==('kitty')){
+	if (result=='kitty'){
 		document.write("you're Kitty");
 	} else {
-		document.write("You're not Kitty");
+		document.write("You're not Kitty", '<br>');
 	}
+
+	///////////////////////////////////////////////////
+	//if 문 출력 -> ture, Hello kitty
+	//else 문 출력 -> false, You're not Kitty
+
+	var name = 'kitty';
+	var userCat = 'Monzi';
+
+	if (name==userCat){
+		document.write('Hello Kitty');
+	} else {
+		document.write("you're not Kitty", '<br>');
+	}
+
+	///비교 연산자 !=를 사용/////////////////////////////////////////////////////
+	if (name!=userCat){
+		//true 두개의 이름이 같지 않다
+		document.write("you're not Kitty", '<br>');
+	} else {
+		//false 두개의 이름이 같다
+		document.write('Hello Kitty');
+	}
+
+
+
 </script>
 
 </body>
