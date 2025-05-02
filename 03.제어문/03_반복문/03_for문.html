@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>for문</title>
+
+    <script>
+        /* 
+        3) for문 : 조건식을 만족할 때까지 코드를 반복하여 실행
+
+        ///기본형///////////////////////////////////////////
+
+        for (초기값; 조건식; 증감식){
+            실행코드;
+        }
+
+        /////////////////////////////////////////////////////
+
+        실행순서
+        (변수의) 초기값 -> 조건식 -> 코드 실행 -> 증감식 -> 조건식 -> 코드실행
+        -> 증감식 -> 조건식 -> 코드실행
+        */
+
+        //기본예제 - for문으로 1~10까지 1씩 증가하며 화면에 출력
+
+        //while문 사용
+        /* var i = 1;
+
+        while (i<=10){
+            document.write(i, '<br>');
+            i++;
+        } */
+        //for문 사용
+        for(var i =1; i<=10; i++){
+            document.write(i, '<br>');
+        }
+
+        document.write('<hr>');
+
+        //예제. 1~100까지의 숫자 중 5의 배수일 경우 빨간색, 7의 배수일 경우 파란색, 5의 배수이면서 7의 배수인 경우 핑크색으로 출력하시오.
+
+        /* 
+        1~100까지의 숫자 -> 1<=100
+        5의 배수(변수 j) -> j%5===0 >> 빨간색
+        7의 배수(변수 j) -> j%7===0 >> 파란색
+        5의 배수이면서 7의 배수 i%5===0 && j%7===0 >> 핑크색
+        */
+        for (var j = 1; j<=100; j++){
+            if (j%5===0 && j%7===0){
+                document.write('<p class="green">'+j+'</p>');
+            }
+        }
+
+        for (var j = 1; j<=100; j++){
+            if (j%5===0){
+                document.write('<p class="red">'+j+'</p>');
+            }
+        }
+        for (var j = 1; j<=100; j++){
+            if (j%7===0){
+                document.write('<p class="blue">'+j+'</p>');
+            }
+        }
+        /////////한번에 출력하는 법//////////////////////////////////////////////////////
+
+        for (var k=1; k<=100; k++){
+            if(k%5===0 && k%7===0){
+                document.write('<p class="green">'+k+'</p>');
+            } else if(k%5===0){
+                document.write('<p class="red">'+k+'</p>');
+            } else if(k%7===0){
+                document.write('<p class="blue">'+k+'</p>');
+            }
+        }
+
+        /* 
+        else if문의 조건식을 여러개 만족할 경우,
+        처음 만족한 조건식의 실행코드 실행되고 종료
+        */
+    </script>
+
+    <style>
+        .red {color: red;}
+        .blue {color: blue;}
+        .green {color: green;}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -61,6 +61,7 @@
         여름 (6~8) month = 6,7,8
         가을 (9~11) month = 9,10,11
         겨울 (12~2) month = 12,1,2
+
         계절별 구간 설정
         봄 
         -> 3 <= month <=5
@@ -72,21 +73,23 @@
         -> 9 <= month <=11
         -> 9 <= month && month <=11
         겨울
-        -> 2 >= month && month=12
+        month == 12 || month == 1 || month == 2
         */
 
-        var month = Number(prompt('원하는 월을 입력해주세요'));
+        //사용자에게 입력받은 월 정보를 담아줄 변수!
+        var month = Number(prompt('지금은 몇 월입니까? (숫자만 입력)'));
 
-        
-        /* if (month===3&&4&&5){
-            document.write('봄입니다.');
-        } else if (month===6&&7&&8){
-            document.write('여름입니다.');
-        } else if (month===9&&10&&11){
-            document.write('가을입니다.');
-        } else if (month===12&&1&&2){
-            document.write('겨울입니다.');
-        }  */
+        if (3 <= month && month <= 5) {
+            document.write('꽃이 화사한 봄이네요!');
+        } else if (6 <= month && month <= 8) {
+            document.write('햇빛이 뜨거운 여름이네요!');
+        } else if (9 <= month && month <= 11) {
+            document.write('독서의 계절 가을이네요!');
+        } else if (month == 12 || month == 1 || month == 2) {
+            document.write('흰눈이 펑펑 내리는 겨울이네요!');
+        } else {
+            alert('1~12월 중에 입력해주세요!');
+        }
 
         
 
