@@ -12,10 +12,26 @@
         /* 
         table 태그 필요
         -> tr3>td9
-        반복 -> tr
-        tr안의 반복 -> td
+        반복 -> tr >> 행
+        tr안의 반복 -> td >> 열
+        1~25 숫자 출력 -> 변수
+        >>증감
         */
-        
+       var j =1;
+       var table = '<table border=1';
+
+        for (var i=1; i<=5; i++){ 
+            table += '<tr>';
+            for(var k =1; k<=5; k++){
+                table += '<td>'+j++ +'</td>';
+                /* j++;
+                table += '</td>'; */
+            }
+            table += '</tr>';
+        }
+        table+= '</table>';
+        // console.log(table);
+        document.write(table);
         
         
         
@@ -25,7 +41,7 @@
 
 <body>
 
-    <!-- <table>
+    <!-- <table border="1">
         <tr>
             <td>1</td>
             <td>2</td>
@@ -41,8 +57,8 @@
             <td>8</td>
             <td>9</td>
         </tr>
-    </table>
- -->
+    </table> -->
+
 </body>
 
 </html>
