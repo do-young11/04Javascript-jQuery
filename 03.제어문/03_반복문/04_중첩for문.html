@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>중첩for문</title>
 
     <script>
-    /* 
-    중첩for문 - for문 안에 for문을 사용하는 것
-
-    //////기본형//////////////////////////////////
-
-    for (초깃값; 조건식; 증감식){ //바깥쪽 for문
-        for (초깃값; 조건식; 증감식){ //안쪽 for문 
-            실행코드
+        /* 
+        중첩for문 - for문 안에 for문을 사용하는 것
+    
+        //////기본형//////////////////////////////////
+    
+        for (초깃값; 조건식; 증감식){ //바깥쪽 for문
+            for (초깃값; 조건식; 증감식){ //안쪽 for문 
+                실행코드
+            }
         }
-    }
-    */
+        */
 
         //예제 - 1행 1열부터 3행 4열까지 출력하시오
         /* 
@@ -34,17 +35,46 @@
         증감식 1++
         */
 
-        for(var i=1; i<=3; i++){ //행의 반복
-            for (var k = 1; k<=4; k++){ //열의 반복
-                document.write(i+'행 '+k+'열', '<br>');
+        for (var i = 1; i <= 3; i++) { //행의 반복
+            for (var k = 1; k <= 4; k++) { //열의 반복
+                document.write(i + '행 ' + k + '열', '<br>');
             }
             document.write('<br>');
         }
 
+        //예제2 - 구구단 출력
+        /* 
+        2x1=2
+        2x2=4
+
+        3x1=3
+        3x2=6
+
+        4x1=4
+        4x2=8
+
+        변수 -> 각 단 j
+        변수 -> 각 곱해지는 수 h
+        변수를 담을 곳 -> g
+        */
+       
+        var g = '';
+
+        for (var j = 2; j <= 9; j++) { //각 단
+            g += '<h2>' +j+'단</h2>';
+            for (var h = 1; h <= 9; h++) {
+                //document.write( j+'x'+h+'='+(j*h),'<br>');
+                g += j+'x'+h+'='+(j*h)+'<br>';
+            }
+            g +='<br>';
+        }
+        document.write(g);
 
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

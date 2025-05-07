@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_example_parameter</title>
+
+    <script>
+        //prompt를 통해 방문자의 아이디와 비밀번호를 입력받고, 만일 잘못된 아이디가 입력된 경우에는 "존재하지 않는 아이디입니다."라는 경고 창을 나타내고, 잘못된 비밀번호가 작성된 경우에는 "잘못된 비밀번호입니다."라는 경고창을 나타내시오. 아이디와 비밀번호가 일치하면 환영문구를 출력하세요.
+
+        /* 
+        if문
+        잘못된 아이디 -> !=
+        잘못된 비밀번호 -> !==
+        경고창 -> alert
+        아이디 비번 일치 -> 환영문구 출력
+        */
+
+
+        var rightId = "green";
+        var rightPw = "1234";
+
+        /* var id = prompt('아이디를 입력하시오');
+        var pw =prompt('비밀번호를 입력하시오');
+        function user(){
+            if(id!=rightId){
+                alert('존재하지 않는 아이디입니다.');
+            } else if (pw!==rightPw){
+                alert('잘못된 비밀번호입니다.');
+            } else {
+                document.write(id+'님 환영합니다.');
+            }
+            }
+        */
+        
+         /* var id = prompt('아이디를 입력하시오');
+         var pw = prompt('비밀번호를 입력하시오');
+         function user(userId,userPw){
+             if(userId==rightId && userPw===rightPw){
+                 document.write(id+'님 환영합니다.');
+             } else if (userId!=rightId){
+                 alert('존재하지 않는 아이디입니다.');
+             } else if (userPw!==rightPw){
+                 alert('잘못된 비밀번호입니다.');   
+             }
+         }
+
+        user(id,pw); */
+
+        var userId = prompt('아이디를 입력하시오');
+        var userPw = prompt('비밀번호를 입력하시오');
+        function login(id,pw) {
+            if (id==rightId) {
+                if (pw==rightPw) {
+                    document.write('환영합니다.');
+                } else {
+                    alert('잘못된 비밀번호입니다.');
+                }
+            } else {
+                alert('존재하지 않는 아이디입니다.');
+            }
+        }
+        login(userId,userPw);
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
