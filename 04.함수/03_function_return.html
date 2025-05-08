@@ -39,6 +39,36 @@
 
         var result = sum(10,20);
         document.write(result,'<br>');
+
+        //예제2 - 입력받은 값의 평균 구하기
+        //국어, 수학, 영어, 과학 점수를 입력받아 평균 점수를 구해서 반환하기
+
+        /* 
+        평균 - 점수 합/과목 수 -> 
+        매개변수 -> 각 과목
+        각 과목의 점수 합 -> 변수 +
+        */
+        var subject = ['국어', '수학', '영어','과학'];
+
+        var result2 = avg(subject);
+        document.write('평균점수는'+result2+'입니다.');
+
+        //평균을 구하는 함수
+        function avg (arrData){
+
+            var sum = 0; //점수의 총합을 담는 변수
+            var dataLeng = arrData.length;
+            console.log(typeof dataLeng); //데이터형을 알아보는 법
+
+            for(var i=0; i<dataLeng; i++){
+                sum += Number(prompt(arrData[i]+'점수는?'));
+            }
+            console.log(sum); //반복문을 통해 얻은 sum의 결과
+            var result = sum/dataLeng;
+            return result;
+        }
+
+
     </script>
 </head>
 <body>
