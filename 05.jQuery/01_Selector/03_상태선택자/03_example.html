@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui-1.8.23.custom.min.js"></script>
+    <script>
+
+        /* 
+        *효과메서드 : 소요시간 / 가속도 easing / 콜백함수
+        1. show() - display 상태를 none이 아닌 것으로 변경 (원래 값으로)
+
+        2. hide() - display 상태를 none으로 변경
+
+        3. animate({
+            css 설정
+        }, 소요시간(ms),가속도,콜백함수) 
+
+        - css 변경사항을 애니메이션 해주는 효과 메서드
+        - css에 트랜지션을 넣은 것과 같은 효과 구현
+        - 수치로 된 속성값만 적용 가능
+
+        4. delay() 
+        : 효과 메서드 앞에서 사용
+        : 효과 메서드 시작을 지연시킬 때 사용
+        */
+        //예제 - 색상 버튼을 클릭하면 색상 정보가 변경되고 .img-box의 배경색이 클릭한 버튼의 색상으로 변경되도록 구현
+
+        /* 
+        색상버튼 클릭 -> 클릭대상 : button, 이벤트 : click()
+        1) 색상정보 바꾸기 >>.select span / text()
+        2) .img-box의 배경색 변경 >> .img-box / css()
+
+        클릭한 버튼의 색상 -> 클릭한 버튼명 
+        >> 버튼명 반환 text()
+        */
+        $(document).ready(function () {
+            $('button').click(function () {
+                
+                //클릭한 버튼의 버튼명 반환
+                var color = $(this).text();
+                console.log(color);
+
+                
+                /* //1)색상정보 변경
+                $('.select').find('span').text(color).css('color',color);
+                //2).img-box 배경색 변경
+                $('.img-box').css('background-color',color); */
+                
+                //$('.select').hide(500).text(color);
+                //1)색상정보 변경
+                $('.select').hide(1000,function(){
+                    
+                    $(this).find('span').text(color).css('color',color);
+
+                }).show(1000);
+
+                //2) 이미지 박스 변경
+                $('.img-box').delay(2000).animate({
+                    backgroundColor: color
+                }, 800, function(){
+                    //이미지 등장
+                    $(this).find('img').css({
+                        transform:'scale(1)',
+                        transition:'all 1s'
+                })
+                });
+                /* $('.img-box').css({
+                    backgroundColor: color,
+                    transition:'all 0.5s'
+                }) */
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>무지개색 버튼을 클릭해 보세요</h1>
+
+        <p class="select"><span>색상</span>을(를) 선택하셨습니다.</p>
+
+        <div class="btngrp">
+            <button>red</button>
+            <button>orange</button>
+            <button>yellow</button>
+            <button>green</button>
+            <button>blue</button>
+            <button>navy</button>
+            <button>purple</button>
+        </div>
+    </div>
+
+    <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="강아지">
+    </div>
+
+    <style>
+        p {
+            font-size: 24px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 24px;
+        }
+
+        .btngrp {
+            margin-bottom: 20px;
+        }
+
+        .img-box {
+            width: 800px;
+            background-color: black;
+            padding: 20px;
+        }
+        .img-box img {
+            width: 100%;
+            display: block;
+            transform: scale(0);
+        }
+    </style>
+</body>
+
+</html>
