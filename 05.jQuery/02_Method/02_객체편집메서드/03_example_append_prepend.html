@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_example_append()_prepend()</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+
+            //이전 또는 다음 버튼을 눌러서, 이미지를 맨 앞으로 또는 맨 뒤로 이동
+            $('#append').click(function(){
+                //맨 앞에 있는 .box를 .img-box의 맨 뒤로 보내기
+                $('.img-box').append($('.img-box .box').first());
+            });
+
+            $('#prepend').click(function(){
+                //맨 뒤에 있는 .box를 .img-box의 맨 앞으로 보내기
+                $('.img-box').prepend($('.img-box .box:last'));
+                //$('.img-box .box').last().prependTo('.img-box');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <button id="prepend">prepend(이전)</button>
+        <button id="append">append(다음)</button>
+
+        <div class="img-box">
+            <div class="box">
+                <img src="image/cake1.jpg" alt="">
+                <h2>케이크1</h2>
+            </div>
+
+            <div class="box">
+                <img src="image/cake2.jpg" alt="">
+                <h2>케이크2</h2>
+            </div>
+
+            <div class="box">
+                <img src="image/cake3.jpg" alt="">
+                <h2>케이크3</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+        .container {
+            width: 760px;
+            text-align: center;
+            margin: 50px auto;
+        }
+        .container button {
+            font-size: 24px;
+        }
+        
+        .container .img-box {
+            margin-top: 30px;
+            padding: 10px;
+            outline: 2px solid saddlebrown;
+        }
+        .img-box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .img-box .box {
+            float: left;
+        }
+        .img-box .box~.box {
+            margin-left: 10px;
+        }
+        .img-box h2 {
+            margin: 0;
+        }
+        
+    </style>
+
+</body>
+
+</html>

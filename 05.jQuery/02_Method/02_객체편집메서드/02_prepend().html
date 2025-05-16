@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>02_prepend()</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        /* 
+        prepend(), prependTo()
+        : 선택한 요소의 하위요소로 맨앞에 새 요소를 생성하거나 추가
+        : 기존 자식 요소를 맨 앞으로 이동
+
+        $('기준요소').prepend('새요소');
+        $('새요소').prependTo('기준요소');
+        */
+
+        $(function(){
+            //예제1
+            $('#listZone').prepend('<li>첫번째 prepend</li>');
+            $('<li>최종 첫번째 prependTo</li>').prependTo('#listZone');
+
+            //예제2 - 2개의 이미지 번갈아 추가하기
+            var imgSrc = ['https://images.unsplash.com/photo-1747193544056-088ffe8969ed?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1745679519301-4d612cdea170?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'];
+
+            var idx = 0; //배열 인덱스 변수
+
+            //$('.img-box').prepend('<img src="'+imgSrc[idx]+'" alt="꽃">');
+            $('.img-box').click(function(){
+
+                //이미지 넣기
+                $(this).prepend('<img src="'+imgSrc[idx]+'" alt="꽃">');
+
+                //1)이미지 순번 바꾸기 1
+                /* idx++;
+                if(idx===2){
+                    idx=0;
+                    console.log('if문 실행');
+                } */
+
+                //2)이미지 순번 바꾸기2 - 삼항조건연산자
+                //조건식? 실행문1 : 실행문2;
+
+                idx===0? idx=1 : idx=0;
+
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <!-- 예제1 -->
+    <ul id="listZone">
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+     </ul>
+
+     <!-- 예제2 -->
+      <h2>하단 상자를 클릭하여 이미지를 추가해 보세요</h2>
+      <div class="img-box">
+       <!--  <img src="https://images.unsplash.com/photo-1747193544056-088ffe8969ed?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="복숭아색 장미">
+        <img src="https://images.unsplash.com/photo-1745679519301-4d612cdea170?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="하얀벽에 분홍꽃"> -->
+      </div>
+
+      <!-- <div class="img-box"></div> -->
+
+      <style>
+        .img-box {
+            outline: 2px solid pink;
+            cursor: pointer;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .img-box img {
+            height: 300px;
+        }
+      </style>
+
+    
+</body>
+</html>
