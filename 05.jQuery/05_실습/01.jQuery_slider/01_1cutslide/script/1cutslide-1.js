@@ -16,7 +16,9 @@ $(function(){
   
     //다음 버튼을 클릭했을 때
 
-    $('.next').click(function(){
+    $('.next a').click(function(e){
+        e.preventDefault();
+
         $('.slider ul').animate({
             marginLeft: '-='+liW // -> -liW + -liW
         },800,function(){
@@ -27,10 +29,13 @@ $(function(){
             $('.slider ul li:first').appendTo('.slider ul');
             $('.slider ul').css('margin-left',-liW);
         });
+
     });
 
     //이전 버튼을 클릭했을 때
-    $('.prev').click(function(){
+    $('.prev a').click(function(evt){
+        evt.preventDefault();
+
         $('.slider ul').animate({
             marginLeft: '+='+liW
         },800,function(){
