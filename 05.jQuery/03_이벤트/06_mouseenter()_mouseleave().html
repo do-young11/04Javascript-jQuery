@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_mouseenter()_mouseleave()</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        /* 
+        mouseenter() : 대상요소의 경계범위에 마우스 포인터가 들어가면 이벤트 발생
+        >> 대상요소에 마우스 포인터가 들어갔을 때만 이벤트 발생
+        >> 이벤트 대상의 자식요소에 마우스가 올라가도 연속적으로 이벤트가 발생하지 않는다.
+
+        mouseleave() : 대상요소의 경계범위에 마우스 포인터가 벗어나면 이벤트 발생
+
+        **이벤트 버블링 현상이 발생하지 않음
+        (선택된 요소에 한번만 이벤트를 발생시키므로)
+        */
+
+        $(function () {
+            $('.box').on({
+                'mouseenter': function () {
+                    $(this).css({
+                        backgroundColor: 'skyblue'
+                    });
+                },
+                'mouseleave': function () {
+                    $(this).css({
+                        backgroundColor: 'transparent'
+                    });
+                }
+            });
+
+            //이벤트 메서드 사용
+            $('.box').mouseenter(function () {
+                $(this).find('a').css({
+                    color: '#fff'
+                });
+            }).mouseleave(function () {
+                $(this).find('a').css({
+                    color: '#000'
+                });
+            });
+        });
+
+        /* 
+        hover() : 선택한 요소에 마우스 포인터가 올라갈 때(mouseenter)와 벗어날 때(mouseleave) 각각 이벤트 발생
+         >> 이벤트 2개가 들어가 있는 메서드(이벤트x)
+
+        $('이벤트 대상').hover(
+            function(){mouseenter시 실행될 코드;},
+            function(){mouseleave시 실행될 코드;}
+        );
+        */
+
+        $(function(){
+            //hover() 1
+           /*  $('.box2').hover(function(){
+                //mouseenter()
+                $(this).css({
+                    backgroundColor: 'darkgreen',
+                    color: '#fff'
+                });
+            },function(){
+                //mouseleave()
+                $(this).css({
+                    backgroundColor: 'transparent',
+                    color: '#000'
+                });
+            });
+ */
+            //hover() 2 -> mouseenter와 mouseleave의 동일한 핸들러 적용
+            $('.box2').hover(function(){
+                $(this).append('<p>추가</p>').css({
+                    color:'pink',
+                    transition: 'all 0.5s'
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1>mouseenter() / mouseleave()</h1>
+
+    <div class="box">
+        <p><a href="#">내용1</a></p>
+        <p><a href="#">내용2</a></p>
+        <p><a href="#">내용3</a></p>
+    </div>
+
+    <div class="box">
+        <p><a href="#">내용4</a></p>
+        <p><a href="#">내용5</a></p>
+        <p><a href="#">내용6</a></p>
+    </div>
+
+    <div class="box">
+        <p><a href="#">내용7</a></p>
+        <p><a href="#">내용8</a></p>
+        <p><a href="#">내용9</a></p>
+    </div>
+
+    <h2>hover()</h2>
+    <div class="box2">
+        <p>컨텐츠1</p>
+        <p>컨텐츠2</p>
+        <p>컨텐츠3</p>
+    </div>
+
+    <style>
+        .box {
+            width: 300px;
+            margin-bottom: 30px;
+            border: 1px solid #999;
+        }
+
+        .box2 {
+            width: 50%;
+            outline: 2px solid salmon;
+            padding: 10px;
+        }
+        .box2 p {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+
+
+</body>
+
+</html>

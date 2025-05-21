@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>mouseover()와 mouseenter()의 차이</title>
+   
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        var x = 0;
+        var y = 0;
+        var z = 0;
+        $(document).ready(function () {
+            $("div.over").mouseover(function () {
+                $(".over span").text(x += 1);
+            });
+            $("div.enter").mouseenter(function () {
+                $(".enter span").text(y += 1);
+            });
+            $("div.move").mousemove(function () {
+                $(".move span").text(z += 1);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h3>이 예제는 mousemove, mouseenter, mouseover의 차이점을 보여줍니다.</h3>
+
+    <p>mouseover 이벤트는 마우스 포인터가 div 요소와 그 자식 요소에 들어갈 때 트리거됩니다.</p>
+    <p>mouseenter 이벤트는 마우스 포인터가 div 요소에 들어갈 때만 트리거됩니다.(중첩되는 요소가 많을 때 많이 사용 ex.메뉴)</p>
+    <p>onmousemove 이벤트는 마우스 포인터가 div 요소 위로 이동할 때마다 트리거됩니다.</p>
+
+    <div class="over">
+        <h3>Mouseover event triggered: <span></span></h3>
+    </div>
+
+    <div class="enter">
+        <h3>Mouseenter event triggered: <span></span></h3>
+    </div>
+
+    <div class="move">
+        <h3>Mousemove event triggered: <span></span></h3>
+    </div>
+
+    <style>
+        div {
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+            padding: 30px;
+            text-align: center;
+            background-color: lightgray;
+        }
+
+        h3 {
+            background-color: white;
+        }
+    </style>
+
+</body>
+
+</html>
