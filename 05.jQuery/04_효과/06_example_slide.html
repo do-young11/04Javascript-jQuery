@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_example_slide</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function(){
+            /* $('.con .hov').hover(function(){
+                $('.con .slide-box').slideToggle(1000,'linear');
+            }); */
+            $('.con .hov').on({
+                'mouseenter': function(){
+                    $('.con .slide-box').slideDown(1000);
+                },
+                'mouseleave': function(){
+                    $('.con .slide-box').slideUp(1000);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="con">
+        <h2 class="hov">여기에 마우스를 올려보세요.</h2>
+
+        <div class="slide-box">
+            <img src="image/suzy.jpg" alt="수지화보">
+        </div>
+    </div>
+
+    <style>
+        .con {
+            width: 600px;
+            margin: 0 auto;
+        }
+        .con h2 {
+            background-color: pink;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .con .slide-box {
+            display: none;
+        }
+        .con .slide-box img {
+            width: 100%;
+        }
+    </style>
+
+</body>
+
+</html>
