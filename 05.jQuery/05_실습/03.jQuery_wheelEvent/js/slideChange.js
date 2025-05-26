@@ -96,6 +96,11 @@ $(document).ready(function(){
         console.log('페이지 offset: '+pageTop);
 
         //페이지 이동
+        $('html, body').animate({
+            scrollTop: pageTop+'px'
+        },800,function(){
+            stat=0; //스크롤 허용 상태로 번경
+        });
         
 
     });
