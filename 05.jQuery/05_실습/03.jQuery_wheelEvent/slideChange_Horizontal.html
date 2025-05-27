@@ -2,13 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>slideChange</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/slideChange.css">
+    <title>slidechange_Horizontal</title>
 
     <script src="js/jquery-1.7.2.min.js"></script>
-    <script src="js/slideChange.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/slidechange_Horizontal.css">
 </head>
 <body>
 
@@ -29,15 +27,17 @@
         </div>
     </header>
 
-    <!-- 슬라이드 페이지 -->
-    <!-- section#brand$.page*6>img.b-logo -->
-
-    <section id="brand1" class="page"><img src="img/logo_laneige.png" alt="laneige" class="b-logo"></section>
-    <section id="brand2" class="page"><img src="img/logo_innisfree.png" alt="innisfree" class="b-logo"></section>
-    <section id="brand3" class="page"><img src="img/logo_primera.png" alt="primera" class="b-logo"></section>
-    <section id="brand4" class="page"><img src="img/logo_mamonde.png" alt="mamonde" class="b-logo"></section>
-    <section id="brand5" class="page"><img src="img/logo_iope.png" alt="iope" class="b-logo"></section>
-    <section id="brand6" class="page"><img src="img/logo_hanyul.png" alt="hanyul" class="b-logo"></section>
+    <!-- section : 페이지(슬라이드) 전체를 담는 부모 -->
+    <section id="content">
+        <!-- article : 각 페이지 -->
+        <!-- article#brand$.page*6>img.b-logo -->
+        <article id="brand1" class="page"><img src="img/logo_laneige.png" alt="laneige" class="b-logo"></article>
+        <article id="brand2" class="page"><img src="img/logo_innisfree.png" alt="innisfree" class="b-logo"></article>
+        <article id="brand3" class="page"><img src="img/logo_primera.png" alt="primera" class="b-logo"></article>
+        <article id="brand4" class="page"><img src="img/logo_mamonde.png" alt="mamonde" class="b-logo"></article>
+        <article id="brand5" class="page"><img src="img/logo_iope.png" alt="iope" class="b-logo"></article>
+        <article id="brand6" class="page"><img src="img/logo_hanyul.png" alt="hanyul" class="b-logo"></article>
+    </section>
 
     <!-- 페이저 네비게이션 -->
     <nav class="side-pager">
@@ -50,10 +50,6 @@
             <li><a href="#brand6"><span>한율</span></a></li>
         </ul>
     </nav>
-
-    <footer class="page">
-        <p>&copy; Copyright 2025</p>
-    </footer>
     
 </body>
 </html>
