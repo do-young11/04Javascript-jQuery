@@ -148,8 +148,8 @@ $(document).ready(function () {
 
 });
 
-//메뉴변경함수
 /* 
+//메뉴변경함수
 함수명 : menuChg
 기능 : .gnb와 .side-pager 메뉴 동시변경
 */
@@ -159,8 +159,8 @@ function menuChg() {
     $('.side-pager li').eq(pageCount).addClass('on').siblings().removeClass('on');
 };
 
-//메뉴변경함수2
 /* 
+//메뉴변경함수2
 함수명 : menuChg2
 기능 : .gnb와 .side-pager 메뉴 동시변경, 매개변수 사용
 */

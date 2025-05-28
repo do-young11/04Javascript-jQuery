@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>1cutslide-2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol, li {
+            list-style: none;
+        }
+        #slider {
+            width: 1200px;
+            border: 5px solid #997c70;
+            margin: 40px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #gallery {
+            position: relative;
+            width: 400%;
+        }
+        #gallery::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #gallery img {
+            width: 25%;
+            display: block;
+            float: left;
+        }
+
+        #pager {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+        #pager li {
+            width: 40px;
+            height: 40px;
+            background-color: #ededed;
+            color: #997c70;
+            margin-left: 5px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 40px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #pager li:hover {
+            background-color: #997c70;
+            color: #ededed;
+        }
+
+        #pager li.on {
+            background-color: #997c70;
+            color: #ededed;
+        }
+    </style>
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/1cutslide-2.js"></script>
+</head>
+<body>
+
+    <!-- 
+    #slider : 실제 슬라이드가 보여질 공간
+    #gallery : 슬라이드 전체를 담는 부모
+    #gallery img : 각각의 슬라이드
+     
+    -->
+
+    <div id="slider">
+        <div id="gallery">
+            <img src="images/illom-slide1.jpg" alt="">
+            <img src="images/illom-slide2.jpg" alt="">
+            <img src="images/illom-slide3.jpg" alt="">
+            <img src="images/illom-slide4.jpg" alt="">
+        </div>
+
+        <ul id="pager">
+            <!-- <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li> -->
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
