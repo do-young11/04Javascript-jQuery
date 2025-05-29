@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+//sllideChange_Horizontal
+
+=======
 //slideChange_Horizontal
 
 ///전역변수//////////////////////
@@ -102,3 +106,4 @@ function menuChg(o){
     $('.gnb li').eq(o).addClass('on').siblings().removeClass('on');
     $('.side-pager li').eq(o).addClass('on').siblings().removeClass('on');
 };
+>>>>>>> 4a438c39110fced56ec2692afc494846eea95e6f
