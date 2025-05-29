@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval-top</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        .main {
+            position: relative;
+            width: 600px;
+            margin: 0 auto;
+        }
+        .box {
+            width: 600px;
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .slide {
+            height: 400%;
+        }
+
+        .slide li img {
+            width: 100%;
+            display: block;
+        }
+
+        .pager {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5%;
+        }
+
+        .pager li {
+            display: inline-block;
+            font-size: 20px;
+            margin: 0 5px;
+        }
+
+        .pager li.on {
+            color: green;
+        }
+    </style>
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/setInterval-vertical.js"></script>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="box">
+            <ul class="slide">
+                <li><img src="image/item1.jpg" alt=""></li>
+                <li><img src="image/item2.jpg" alt=""></li>
+                <li><img src="image/item3.jpg" alt=""></li>
+                <li><img src="image/item1.jpg" alt=""></li>
+            </ul>
+        </div>
+
+        <ul class="pager">
+            <li class="on">▶</li>
+            <li>▶</li>
+            <li>▶</li>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>
