@@ -10,6 +10,7 @@ $(function(){
         auto = setInterval(topmove,2000)
     });
 
+    $('.pager li').eq(page).addClass('on').siblings().removeClass('on');
     
 });
 var page = 0;
@@ -24,11 +25,10 @@ function topmove(){
             marginTop:0
         })
     }
+
     $('.slide').animate({
-        marginTop: -(600*page)
+        marginTop: -(100*page)+'%'
     },800);
     
-    //페이저
-
 };
 
