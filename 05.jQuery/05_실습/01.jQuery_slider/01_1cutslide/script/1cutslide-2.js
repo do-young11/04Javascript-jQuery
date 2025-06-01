@@ -9,9 +9,7 @@
 
 */
 
-$(function(){
-
-    
+$(function(){ 
     /* var sliderW = $('#slider').width();
     console.log(sliderW); */
 
@@ -50,7 +48,4 @@ $(function(){
 
         $(this).addClass('on').siblings().removeClass();
     });
-
-
-
 });
