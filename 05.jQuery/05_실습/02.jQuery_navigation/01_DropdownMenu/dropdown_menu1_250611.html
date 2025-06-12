@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown_menu1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol, li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            width: 100%;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #222;
+        }
+
+        nav .depth01 {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        nav .depth01::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        nav .depth01 > li {
+            width: 14.28%;
+            float: left;
+            text-align: center;
+            
+            position: relative; /* .depth02의 기준!!! */
+
+            /* outline: 2px solid lime; */
+        }
+        nav .depth01 > li > a {
+            color: rgba(255,255,255,0.9);
+            line-height: 50px;
+            font-size: 20px;
+            display: block;
+        }
+        nav .depth01 > li > a:hover {
+            color: lime;
+        }
+
+        nav .depth01 > li > ul.depth02 {
+            /* outline: 2px solid plum; */
+            background-color: #333;
+
+            position: absolute;
+            left: 0;
+            top: 100%;
+
+            width: 100%;
+
+            display: none;
+        }
+
+        ul.depth02 li {
+            padding: 5px 0;
+        }
+        ul.depth02 li a {
+            color: rgba(255,255,255,0.7);
+            /* line-height: 40px; */
+        }
+        ul.depth02 li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            //mouseenter, mouseleave
+            //mouseover, mouseout
+
+            $('.depth01 > li').mouseenter(function(){
+                //$('.depth02').slideDown(); //모든 .depth02가 등장!!
+                $(this).find('.depth02').stop().slideDown();
+            });
+
+            $('.depth01 > li').mouseleave(function(){
+                $('.depth02').stop().slideUp();
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <h1>jQuery 드롭다운 메뉴</h1>
+
+    <nav>
+        <ul class="depth01">
+            <li>
+                <a href="#">HOME</a>
+                <ul class="depth02">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">PROFILE</a>
+                <ul class="depth02">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">PHOTOSHOP</a>
+                <ul class="depth02">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">HTML</a>
+                <ul class="depth02">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">CSS</a>
+                <ul class="depth02">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                    <li><a href="#">Submenu5</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Javascript</a>
+                <ul class="depth02">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">jQuery</a>
+                <ul class="depth02">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+</body>
+</html>
