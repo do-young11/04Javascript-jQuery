@@ -1,9 +1,43 @@
 //flow
 
+var autoCall; //인터벌을 담을 변수
+
 $(function(){
 
-    setInterval(flow,20);//흘러가는 속도 조절
+    autoCall = setInterval(flow,20);//흘러가는 속도 조절
+
+    //마우스 오버 시 멈춤, 아웃시 다시 실행
+    $('.flow li').hover(
+        function (){
+            //mouseenter
+            //자동실행 멈춤 - 인터벌 지우기
+            //.caption 등장
+
+            clearInterval(autoCall);
+            $(this).find('.caption').stop().animate({
+                opacity: 1,
+                top: '105%'
+            },500);
+        },
+        function (){
+            //mouseleave
+            //자동실행 - 인터벌 재실행
+            //.caption 숨기기
+
+            autoCall = setInterval(flow,20);
+            $(this).find('.caption').hide(0,function(){
+                $(this).css({
+                    top: '50%',
+                    opacity: 0,
+                    display: 'block'
+                })
+            });
+        }
+    );
 });
+
+
+
 /* ///////////////////////////////////////////////////
 함수명 : flow
 기능 : 컨텐츠를 왼쪽으로 흐르게 하는 함수 

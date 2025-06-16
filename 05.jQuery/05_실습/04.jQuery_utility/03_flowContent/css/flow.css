@@ -18,7 +18,7 @@ html, body {
 }
 
 h1.title {
-    margin-top: 20px 0 40px;
+    margin: 20px 0 40px;
     padding: 0 50px;
     font-size: 2rem;
     font-weight: bold;
@@ -57,7 +57,7 @@ div.content { /* 실제 슬라이드가 보여지는 공간 */
 }
 .content ul li  .caption {
     width: calc(100% - 20px);
-    background-color: #fff;
+    /* background-color: #fff; */
     position: absolute;
     left: 10px;
     top: 50%; /* caption 최초 위치 */
