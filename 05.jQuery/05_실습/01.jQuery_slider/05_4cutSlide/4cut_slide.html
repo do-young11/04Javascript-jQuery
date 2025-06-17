@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             margin: 0;
             padding: 0;
         }
+
         button {
             font-size: 20px;
             padding: 10px;
@@ -22,20 +24,26 @@
             position: relative;
             top: 100px;
         }
+
         #slider {
             width: 1000px;
             overflow: hidden;
             float: left;
         }
-        #slider .container { /* 움직이는 대상 */
+
+        #slider .container {
+            /* 움직이는 대상 */
             /* width: 200%; */
-            position: relative; /* 좌표로 움직이게 */
+            position: relative;
+            /* 좌표로 움직이게 */
         }
+
         #slider .container::after {
             content: "";
             display: block;
             clear: both;
         }
+
         #slider .container .item {
             height: 300px;
             /* width: 240px; */
@@ -44,16 +52,18 @@
             box-sizing: border-box;
             float: left;
         }
-        #slider .container .item h2{
+
+        #slider .container .item h2 {
             text-align: center;
         }
-        #slider .container .item img{
+
+        #slider .container .item img {
             width: 100%;
             display: block;
         }
     </style>
 
-<script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-1.12.4.min.js"></script>
     <script>
 
         $(document).ready(function () {
@@ -92,15 +102,16 @@
             1번 클릭(2,3,4,5) >> left: -250px
             2번 클릭(1,2,3,4) >> left: 0
             */
-            $('#right-button').click(function(){
+            $('#right-button').click(function () {
                 $('.container').animate({
-                    left: '-='+250
-                },800);
+                    left: '-=' + 250
+                }, 800);
             });
         });
 
     </script>
 </head>
+
 <body>
 
     <button id="left-button">&lt;</button>
@@ -140,6 +151,7 @@
     </div>
 
     <button id="right-button">&gt;</button>
-    
+
 </body>
+
 </html>
