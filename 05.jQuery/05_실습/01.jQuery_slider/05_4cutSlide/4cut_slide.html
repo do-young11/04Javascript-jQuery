@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4cut_slide</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px;
+            background-color: lightblue;
+            border-radius: 6px;
+            color: #fff;
+            float: left;
+            margin-right: 10px;
+
+            position: relative;
+            top: 100px;
+        }
+        #slider {
+            width: 1000px;
+            overflow: hidden;
+            float: left;
+        }
+        #slider .container { /* 움직이는 대상 */
+            /* width: 200%; */
+            position: relative; /* 좌표로 움직이게 */
+        }
+        #slider .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #slider .container .item {
+            height: 300px;
+            /* width: 240px; */
+            margin-right: 10px;
+            border: 5px solid lightblue;
+            box-sizing: border-box;
+            float: left;
+        }
+        #slider .container .item h2{
+            text-align: center;
+        }
+        #slider .container .item img{
+            width: 100%;
+            display: block;
+        }
+    </style>
+
+<script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            //css 초기설정
+            // #slider는 실제 보여지는 영역! 고정된 크기 사용
+            // .container, .item 의 width값 설정 (item이 추가될 것을 고려하여 유동적인 .container의 너비 설정이 필요!)
+
+            var width = $('#slider').width(), //1000
+                count = $('#slider .item').length; //6
+
+            console.log(width, count);
+
+            //css값 적용하기 - .container
+            $('#slider .container').css({
+                width: width * count //1000*6=6000
+            }).find('.item').css({
+                width: (width / 4) - 10 // (1000/4)-10(margin-right) = 240
+            });
+
+            //짝수번째 .item의 border-color 변경
+            $('.item:nth-child(even)').css('border-color', 'skyblue');
+            // :nth-child(even|odd)를 사용하면 우리가 아는 순서와 홀수, 짝수를 맞출 수 있다!
+            // :odd, :even은 인덱스 번호를 기준으로 홀수, 짝수 선택!
+
+            /*
+            슬라이드 구현하기
+            움직이는 대상 >>.container
+            초기값 >>left:0
+
+            *다음 버튼을 클릭 했을 때
+            1번 클릭(2,3,4,5) >> left: -250px
+            2번 클릭(3,4,5,6) >> left: -500px
+
+            *이전 버튼을 클릭 했을 때
+            1번 클릭(2,3,4,5) >> left: -250px
+            2번 클릭(1,2,3,4) >> left: 0
+            */
+            $('#right-button').click(function(){
+                $('.container').animate({
+                    left: '-='+250
+                },800);
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+    <button id="left-button">&lt;</button>
+
+    <div id="slider">
+        <div class="container">
+            <div class="item">
+                <h2>1 Photo</h2>
+                <img src="img/trip1.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>2 Photo</h2>
+                <img src="img/trip2.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>3 Photo</h2>
+                <img src="img/trip3.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>4 Photo</h2>
+                <img src="img/trip4.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>5 Photo</h2>
+                <img src="img/trip1.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>6 Photo</h2>
+                <img src="img/trip2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <button id="right-button">&gt;</button>
+    
+</body>
+</html>
