@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>autoSlide</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        ul::after,
+        ol::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+
+        body {
+            background-color: #FFE7E7;
+        }
+
+        div#slider {
+            /* 실제 슬라이드가 보여지는 부분! */
+            width: 1000px;
+            border: 3px solid #944E63;
+            margin: 100px auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        ul#viewer {
+            width: 400%;
+            position: relative;
+            left: 0;
+        }
+
+        ul#viewer li {
+            width: 25%;
+        }
+
+        ul#viewer li img {
+            width: 100%;
+            display: block;
+        }
+
+        #btnGroup {
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            /* background-color: yellow; */
+        }
+
+        #btnGroup li {
+            width: 16px;
+            height: 16px;
+            background: url(image/btn.png) no-repeat;
+            /* outline: 1px solid blue; */
+        }
+
+        #btnGroup li~li {
+            margin-left: 4px;
+        }
+
+        #btnGroup li span {
+            display: none;
+        }
+
+        #btnGroup li.active {
+            /* background-position: bottom; */
+            background-position: 0 -16px;
+        }
+
+        /* 좌우 화살표 */
+        .abtn {
+            width: 40px;
+            height: 40px;
+            text-indent: -9999px;
+            position: absolute;
+            top: 50%;
+            /* margin-top: -24.5px; */
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            cursor: pointer;
+            /* outline: 2px solid blue; */
+        }
+
+        .abtn:hover {
+            background-position: bottom;
+        }
+
+        .prev {
+            background: url(image/arrow_left.png) no-repeat;
+            left: 20px;
+        }
+
+        .next {
+            background: url(image/arrow_right.png) no-repeat;
+            right: 20px;
+        }
+    </style>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <!-- slider : 슬라이드가 실제 보여지는 영역, 동시에 모든 구성요소(슬라이더, 좌우화살표, 페이저)를 담는 상위요소! -->
+    <div id="slider">
+        <!-- viewer : 슬라이드 전체를 담는 부모! 실제 슬라이드가 움직이는 대상 -->
+        <ul id="viewer">
+            <li data-seq="0">
+                <a href="#"><img src="image/slide1.jpg" alt=""></a>
+            </li>
+            <li data-seq="1">
+                <a href="#"><img src="image/slide2.jpg" alt=""></a>
+            </li>
+            <li data-seq="2">
+                <a href="#"><img src="image/slide3.jpg" alt=""></a>
+            </li>
+            <li data-seq="3">
+                <a href="#"><img src="image/slide4.jpg" alt=""></a>
+            </li>
+        </ul>
+
+        <ul id="btnGroup">
+            <li class="active"><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+        </ul>
+
+        <!-- 좌우 화살표 -->
+        <div class="abtn prev">이전</div>
+        <div class="abtn next">다음</div>
+
+    </div>
+
+
+    <!-- 
+        HTML의 data-* 속성 (커스텀 속성)
+        *참고 https://www.w3schools.com/tags/att_data-.asp
+
+        - HTML 요소에 추가적으로 데이터를 저장할 수 있게 하는 속성
+        - HTML 요소에 '사용자 정의 데이터'를 정의할 수 있음
+        - 태그의 속성처럼 사용되지만 자바스크립트에서는 getAttribute() 메서드가 아닌 dataset 속성을 통해 읽기, 쓰기 같은 접근을 할 수 있다. 
+
+        - 속성명은 대문자 포함 안됨, 최소 한글자 이상 작성할 것
+    -->
+
+
+</body>
+
+</html>

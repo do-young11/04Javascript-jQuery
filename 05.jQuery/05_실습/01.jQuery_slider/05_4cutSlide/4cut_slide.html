@@ -102,11 +102,46 @@
             1번 클릭(2,3,4,5) >> left: -250px
             2번 클릭(1,2,3,4) >> left: 0
             */
-            $('#right-button').click(function () {
+
+            var currentPage = 0;
+            var changePage = function(){
+
+                $('#slider .container').animate({
+                    left: -(currentPage * width)/4
+                },600);
+                //다음 버튼 클릭 시
+                //cp=0, (*1000)/4 = left= 0 
+                //cp=1, (*1000)/4 = left=-250
+
+                //이전 버튼 클릭시
+                //cp=2, left=-500
+                //cp=1, left=-250
+            };
+
+            $('#right-button').click(function(){
+                if(currentPage < count-4){ //총 아이템 갯수 (count)- 보여지고 있는 아이템 갯수(4)=2
+                    // currentPage++;
+                    currentPage +=1;
+
+                    changePage();
+                };
+            });
+
+            $('#left-button').click(function(){
+                if(currentPage >0){ //총 아이템 갯수 (count)- 보여지고 있는 아이템 갯수(4)=2
+                    currentPage -=1;
+
+                    changePage();
+                };
+            });
+
+            /* $('#right-button').click(function () {
                 $('.container').animate({
                     left: '-=' + 250
                 }, 800);
-            });
+            }); */
+
+
         });
 
     </script>
@@ -146,6 +181,15 @@
             <div class="item">
                 <h2>6 Photo</h2>
                 <img src="img/trip2.jpg" alt="">
+            </div>
+            <div class="item">
+                <h2>7 Photo</h2>
+                <img src="img/trip3.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>8 Photo</h2>
+                <img src="img/trip4.jpg" alt="">
             </div>
         </div>
     </div>
